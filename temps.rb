@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 # -*- coding: utf-8 -*-
 
+# set the period for weighted moving average
 AVG_PERIOD = 20
 
 def get_temps
@@ -56,4 +57,6 @@ def show_temps
   end
 end
 
+
+# run as 'ruby temps.rb'; ctrl-c to exit
 show_temps
