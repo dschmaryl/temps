@@ -21,7 +21,7 @@ def get_temps
 end
 
 def show_temps
-  average = {'cpu' => 0, 'gpu' => 0}
+  avgs = {'cpu' => 0, 'gpu' => 0}
   prev_temps = {'cpu' => [], 'gpu' => []}
   temps = get_temps
   if temps == nil
@@ -42,11 +42,10 @@ def show_temps
           numerator += prev_temps[key][x] * (x + 1)
         end
         denominator = length * (length + 1) / 2
-        average[key] = numerator / denominator
+        avgs[key] = numerator / denominator
       end
       print(
-        "\rcpu: #{average['cpu'].round(1)}" +
-        "  gpu: #{average['gpu'].round(1)} "
+        "\rcpu: #{avgs['cpu'].round(1)}  gpu: #{avgs['gpu'].round(1)} "
       )
       sleep 0.25
       temps = get_temps
