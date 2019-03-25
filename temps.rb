@@ -56,6 +56,5 @@ def show_temps
   end
 end
 
-
 # run as 'ruby temps.rb'; ctrl-c to exit
 show_temps
