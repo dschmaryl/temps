@@ -6,7 +6,7 @@ AVG_PERIOD = 20
 
 def get_temps
   begin
-    cpu_temp = `sensors`[/(CPU Temp.*?)(\d+)/, 2]
+    cpu_temp = `sensors`[/CPU Temp.*?(\d+)/, 1]
   rescue Errno::ENOENT
     puts 'ERROR: need to install lm_sensors'
     return nil
