@@ -45,7 +45,7 @@ def show_temps
         avgs[key] = numerator / denominator
       end
       print(
-        "\rcpu: #{avgs['cpu'].round(1)}  gpu: #{avgs['gpu'].round(1)} "
+        "\rcpu: #{avgs['cpu'].round()}  gpu: #{avgs['gpu'].round()} "
       )
       sleep 0.25
       temps = get_temps
